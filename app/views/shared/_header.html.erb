@@ -1,2 +1,24 @@
 <div class="header">
+  <div class="title">
+    <%= link_to "Share Laundry", root_path, style:"text-decoration: none;" %>
+  </div>
+  <div class="header_R">
+    <% if user_signed_in? %>
+    <div class="user_name">
+      <b>ようこそ<%= "#{current_user.email}"%>さん</b>
+    </div>
+    <div>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn-shared"%>
+    </div>
+
+    <% else %>
+    <div class="user_name">
+      <b>ようこそゲストさん</b>
+    </div>
+    <div>
+      <a href="/users/sign_in" class="btn-shared">ログイン</a>
+    </div>
+    <% end %>
+
+  </div>
 </div>

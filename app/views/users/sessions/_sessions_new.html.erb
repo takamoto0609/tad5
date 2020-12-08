@@ -1,0 +1,23 @@
+<div class="content">
+  <div class="content_area">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <em>メールアドレス</em><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <em>パスワード</em><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "ログイン", class:"btn-shared"%>
+    </div>
+    <br>
+    <div>
+      <a href="/users/sign_up" class="btn-shared">→新規登録はこちら</a>
+    </div>
+    <% end %>
+  </div>
+</div>

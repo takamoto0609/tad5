@@ -62,6 +62,22 @@
   height: 600px;
 }
 
+.content {
+  width: calc(100% - 300px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-135deg, #069df5, #8c04ec);
+
+  &_area {
+    width: 96%;
+    height: 96%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .menu {
   width: 300px;
   padding: 10px;
