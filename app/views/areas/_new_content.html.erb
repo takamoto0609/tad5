@@ -1,0 +1,9 @@
+<div class="content">
+  <div class="content_area">
+    <%= form_with(model: @area, url:areas_path, local: true) do |f| %>
+    <%= f.text_field :address, placeholder:"ご利用エリアを入力してください", class:"area_input" %>
+    <%= f.submit "Go", class:"btn-shared" %>
+    <p style="font-size:12px; color:white;">ヒント：緯度経度の取得に失敗した場合、ハワイに飛びます</p>
+    <% end %>
+  </div>
+</div>
