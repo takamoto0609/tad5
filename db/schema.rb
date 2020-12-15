@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_044101) do
+ActiveRecord::Schema.define(version: 2020_12_09_063207) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "address", null: false
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 2020_12_09_044101) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_areas_on_user_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "wash_power_id"
+    t.integer "status_id", null: false
+    t.text "address", null: false
+    t.integer "point", null: false
+    t.text "comment", null: false
+    t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,4 +49,5 @@ ActiveRecord::Schema.define(version: 2020_12_09_044101) do
   end
 
   add_foreign_key "areas", "users"
+  add_foreign_key "items", "users"
 end
