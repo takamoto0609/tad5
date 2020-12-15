@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   def index
     my_area
+    @items = Item.all
+    gon.items = @items
   end
 
   def new
