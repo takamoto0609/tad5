@@ -24,6 +24,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @item = Item.find(params[:id])
+    @wash_power = WashPower.find(@item.wash_power_id)
+    @status = Status.find(@item.status_id)
+  end
+
   private
 
   def my_area
