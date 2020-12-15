@@ -29,6 +29,21 @@ class ItemsController < ApplicationController
     @wash_power = WashPower.find(@item.wash_power_id)
     @status = Status.find(@item.status_id)
   end
+  
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.new(item_params)
+    if @item.valid?
+      Item.find(params[:id]).update(item_params)
+      redirect_to root_path
+    else
+      @item = Item.find(params[:id])
+      render :edit
+    end
+  end
 
   private
 
