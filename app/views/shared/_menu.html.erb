@@ -1,14 +1,18 @@
 <div class="menu">
   <div class="menu_1">
     <p>現在のポイント</p>
-    <b style="font-size: 24px;">100000P</b>
+    <% if user_signed_in? %>
+    <b style="font-size: 24px;"><%= "#{@my_wallet.point}" %>P</b>
+    <% else %>
+    <b style="font-size: 24px;">--- P</b>
+    <% end %>
   </div>
   <div class="menu_2">
     <div>
       <a href="/areas/new" class="search_btn btn-shared"><b style="font-size: 18px;">ご利用エリア</b>に移動</a>
     </div>
     <div>
-      <a href="/wallets/index" class="search_btn btn-shared"><b style="font-size: 16px;">ポイントメニュー</b></a>
+      <a href="/wallets/show" class="search_btn btn-shared"><b style="font-size: 16px;">ポイントメニュー</b></a>
     </div>
   </div>
   <div class="menu_2">
