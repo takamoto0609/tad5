@@ -70,8 +70,12 @@
   background: linear-gradient(-135deg, #069df5, #8c04ec);
 
   &_area {
-    width: 96%;
-    height: 96%;
+    width: 80%;
+    height: 80vh;
+    padding: 10px;
+    color: rgb(32, 206, 206);
+    background-color: rgb(28, 5, 82);
+    border: 2px silver solid;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,6 +96,7 @@
     justify-content: center;
     color: rgb(32, 206, 206);
     background-color: rgb(28, 5, 82);
+    border: 2px silver solid;
   }
 
   &_2 {

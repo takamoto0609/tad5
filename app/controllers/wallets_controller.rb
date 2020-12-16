@@ -1,5 +1,9 @@
 class WalletsController < ApplicationController
   def show
+    if user_signed_in?
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def check_receipts
