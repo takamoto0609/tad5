@@ -1,19 +1,19 @@
 <div class="content">
   <div class="wallet_content">
-    <b>送信したリクエスト履歴</b>
+    <b>受信したリクエスト履歴</b>
     <div>
       <% @orders.each do |o| %>
       <b>
         <% if o.status == 0 %>
         <span style="color:orange;">未承認</span>
-        <%= link_to '▶キャンセル', crash_order_items_path(o.id), class: "small_btn", style:"text-decoration: none;" %>
+        <%= link_to '▶承認', approval_order_items_path(o.id), class: "small_btn", style:"text-decoration: none;" %>
         <% else %>
         <span style="color:cyan;">承認済</span>
         <% end %>
         <%= "#{o.point}P" %>
       </b>
       <%= "@#{o.item.address}" %><br>
-      <%= "　　　送信日時：#{o.created_at.strftime("%Y年%m月%d日 %H時%m分")}" %><br>
+      <%= "　　　受信日時：#{o.created_at.strftime("%Y年%m月%d日 %H時%m分")}" %><br>
       <% end %>
     </div>
   </div>

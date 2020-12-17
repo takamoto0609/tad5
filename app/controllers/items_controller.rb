@@ -46,11 +46,13 @@ class ItemsController < ApplicationController
   end
   
   def order
-    item = Item.find(params[:format])
+    #binding.pry
+    item = Item.find_by(id: params[:format])
     if current_user.wallet.point >= item.point
       order = Order.new
       order.item_id = item.id
-      order.user_id = current_user.id
+      order.taker = current_user.id
+      order.giver = item.user_id
       order.point = item.point
       order.save
       @order_message = "リクエストを送信しました"
@@ -61,10 +63,44 @@ class ItemsController < ApplicationController
 
   def check_order
     if user_signed_in?
-      @orders = Order.where(user_id: current_user.id).order(id: "DESC")
+      @orders = Order.where(taker: current_user.id).order(id: "DESC")
     else
       redirect_to new_user_session_path
     end
+  end
+
+  def crash_order
+    #binding.pry
+    order = Order.find(params[:format])
+    order.destroy
+    @orders = Order.where(taker: current_user.id).order(id: "DESC")
+    redirect_to check_order_items_path
+  end
+
+  def receive_order
+    if user_signed_in?
+      @orders = Order.where(giver: current_user.id).order(id: "DESC")
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
+  def approval_order
+    #binding.pry
+    order = Order.find(params[:format].to_i)
+    Order.find(params[:format].to_i).update(status: 1)
+    taker_receipt = Receipt.new
+    taker_receipt.point = (-1)*order.point
+    taker_receipt.wallet_id = User.find_by(id: order.taker).wallet.id
+    taker_receipt.reason = "サービスを利用しました"
+    taker_receipt.save
+    giver_receipt = Receipt.new
+    giver_receipt.point = order.point
+    giver_receipt.wallet_id = User.find_by(id: order.giver).wallet.id
+    giver_receipt.reason = "サービス提供のお礼です"
+    giver_receipt.save
+    @orders = Order.where(giver: current_user.id).order(id: "DESC")
+    redirect_to receive_order_items_path
   end
 
   private

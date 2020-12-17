@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     collection do
       get 'order'
       get 'check_order'
+      get 'crash_order'
+      get 'receive_order'
+      get 'approval_order'
     end
   end
   resources :wallets do
