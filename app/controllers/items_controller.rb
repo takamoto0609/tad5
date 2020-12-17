@@ -44,6 +44,20 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+  
+  def order
+    item = Item.find(params[:format])
+    if current_user.wallet.point >= item.point
+      order = Order.new
+      order.item_id = item.id
+      order.user_id = current_user.id
+      order.point = item.point
+      order.save
+      @order_message = "リクエストを送信しました"
+    else
+      @order_message = "ポイントが不足しています"
+    end
+  end
 
   private
 

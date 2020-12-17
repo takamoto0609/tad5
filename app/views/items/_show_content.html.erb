@@ -8,6 +8,8 @@
     コメント：<%= @item.comment %><br>
     <% if @item.user_id == current_user.id %>
     <%= link_to '編集', edit_item_path, method: :get, class: "btn-shared" %>
+    <% else %>
+    <%= link_to 'リクエストを送る', order_items_path(@item), class: "btn-shared" %>
     <% end %>
   </div>
 </div>
