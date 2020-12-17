@@ -16,7 +16,7 @@ class AreasController < ApplicationController
       Area.create(area_params)
       redirect_to :root
     else
-      @area = Area.new(field_params)
+      @area = Area.new(area_params)
       render :new
     end
   end
