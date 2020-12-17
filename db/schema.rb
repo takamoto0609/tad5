@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 2020_12_16_233517) do
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "point", null: false
     t.integer "status", default: 0, null: false
-    t.bigint "user_id", null: false
+    t.integer "taker", null: false
+    t.integer "giver", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_orders_on_item_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "receipts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 2020_12_16_233517) do
   add_foreign_key "areas", "users"
   add_foreign_key "items", "users"
   add_foreign_key "orders", "items"
-  add_foreign_key "orders", "users"
   add_foreign_key "receipts", "wallets"
   add_foreign_key "wallets", "users"
 end

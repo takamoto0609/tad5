@@ -3,7 +3,8 @@ class CreateOrders < ActiveRecord::Migration[6.0]
     create_table :orders do |t|
       t.integer    :point,  null: false
       t.integer    :status, null: false, default: 0
-      t.references :user,   null: false, foreign_key: true
+      t.integer    :taker,  null: false
+      t.integer    :giver,  null: false
       t.references :item,   null: false, foreign_key: true
       t.timestamps
     end
