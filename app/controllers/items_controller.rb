@@ -59,6 +59,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def check_order
+    if user_signed_in?
+      @orders = Order.where(user_id: current_user.id).order(id: "DESC")
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
   private
 
   def my_area

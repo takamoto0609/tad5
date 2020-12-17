@@ -1,0 +1,19 @@
+<div class="content">
+  <div class="wallet_content">
+    <b>リクエスト履歴</b>
+    <div>
+      <% @orders.each do |o| %>
+      <b>
+        <% if o.status == 0 %>
+        <span style="color:orange;">未承認</span>
+        <% else %>
+        <span style="color:cyan;">承認済</span>
+        <% end %>
+        <%= "#{o.point}P" %>
+      </b>
+      <%= "@#{o.item.address}" %><br>
+      <%= "　　　送信日時：#{o.created_at}" %><br>
+      <% end %>
+    </div>
+  </div>
+</div>

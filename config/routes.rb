@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get 'order'
+      get 'check_order'
     end
   end
   resources :wallets do
