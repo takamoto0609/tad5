@@ -1,11 +1,12 @@
 <div class="content">
   <div class="wallet_content">
-  <b>ポイント履歴</b>
-  <div>
-    <% @receipts.each do |r| %>
-    <b><%= "#{r.point}P" %></b>
-    <%= "#{r.reason}" %><br>
-    <% end %>
+    <b>ポイント履歴</b>
+    <div>
+      <% @receipts.each do |r| %>
+      <%= "#{r.created_at.strftime("%Y年%m月%d日 %H時%m分")}" %>
+      <b><%= "#{r.point}P" %></b>
+      <%= "#{r.reason}" %><br>
+      <% end %>
     </div>
   </div>
 </div>
