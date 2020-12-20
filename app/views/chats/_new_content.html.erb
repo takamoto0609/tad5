@@ -1,6 +1,8 @@
-<div class="chat_content">
-  <div class="chat_body">
-    <h2 style="text-align:center"><%="#{@item.user.email}さんへの問い合わせ"%></h2>
+<div class="content">
+  <div class="content_header_daj">
+    <p style="text-align:center"><%="#{@item.user.email}さんへの問い合わせ"%></p>
+  </div>
+  <div class="content_body_S">
     <div id="chats">
       <% @chats.each do |chat|%>
       <%if chat.user_id==current_user.id%>
@@ -25,7 +27,7 @@
       <%end%>
     </div>
   </div>
-  <div class="chat_footer">
+  <div class="content_footer">
     <div class="chat_form">
       <%= form_with model: @chat, url: item_chats_path, id:"send-form", local: true do |f|%>
       <%= f.text_field :message, class:"items-text", id:"message", placeholder:"入力してね", style:"width:30%;", maxlength:"40" %>

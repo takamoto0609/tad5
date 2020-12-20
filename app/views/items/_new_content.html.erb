@@ -1,13 +1,17 @@
 <div class="content">
-  <div class="content_area">
+  <div class="content_body_M_daj">
     <%= form_with(model: @item, url:items_path, local: true) do |f| %>
     洗濯重量　<%= f.collection_select(:wash_power_id, WashPower.all, :id, :name, {include_blank: "---"}) %>まで<br><br>
     看板　　　<%= f.collection_select(:status_id, Status.all, :id, :name, {include_blank: "---"}) %><br><br>
     <%= f.text_field :point, placeholder:"設定ポイント" %>P<br><br>
     <%= f.text_field :address, placeholder:"受付場所" %><br><br>
     <%= f.text_area :comment, placeholder:"コメント" %><br><br>
-    <%= f.submit "登録", class:"btn-shared" %>
     <p style="font-size:12px; color:white;">ヒント：あとで変更できます</p><br>
-    <% end %>
+  </div>
+  <div class="content_footer">
+    <div class="chat_form">
+      <%= f.submit "登録", class:"small_btn btn-shared" %>
+      <% end %>
+    </div>
   </div>
 </div>

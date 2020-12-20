@@ -62,26 +62,6 @@
   height: 600px;
 }
 
-.content {
-  width: calc(100% - 300px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(-135deg, #069df5, #8c04ec);
-
-  &_area {
-    width: 80%;
-    height: 80vh;
-    padding: 10px;
-    color: rgb(32, 206, 206);
-    background-color: rgb(28, 5, 82);
-    border: 2px silver solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
 .menu {
   width: 300px;
   padding: 10px;
@@ -120,4 +100,119 @@
   margin: 10px;
   padding: 3px;
   background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+}
+
+.very_small_btn {
+  width: 60px;
+  height: 30px;
+  margin: 10px;
+  padding: 1px;
+  color: white;
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+}
+
+//コンテンツ枠
+.content {
+  width: calc(100% - 300px);
+  padding: 20px;
+  background: linear-gradient(-135deg, #069df5, #8c04ec);
+}
+
+.content_header {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  color: rgb(32, 206, 206);
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+}
+
+.content_header_daj {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  color: rgb(32, 206, 206);
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_body_S {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  color: rgb(32, 206, 206);
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+  overflow: scroll;
+}
+
+.content_body_S_daj {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  color: rgb(32, 206, 206);
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_body_M {
+  width: 100%;
+  height: 480px;
+  padding: 10px;
+  color: rgb(32, 206, 206);
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+  overflow: scroll;
+}
+
+.content_body_M_daj {
+  width: 100%;
+  height: 480px;
+  padding: 10px;
+  color: rgb(32, 206, 206);
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_body_L {
+  width: 100%;
+  height: 560px;
+  padding: 10px;
+  color: rgb(32, 206, 206);
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_footer {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_footer_2 {
+  width: 50%;
+  height: 80px;
+  background-color: rgb(28, 5, 82);
+  border: 2px silver solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
