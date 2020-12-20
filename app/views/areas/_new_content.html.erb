@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="content_area">
+  <div class="content_body_L">
     <%= form_with(model: @area, url:areas_path, local: true) do |f| %>
     <%= f.text_field :address, placeholder:"ご利用エリアを入力してください", class:"area_input" %>
     <%= f.submit "Go", class:"btn-shared" %>

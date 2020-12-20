@@ -1,6 +1,8 @@
 <div class="content">
-  <div class="wallet_content">
+  <div class="content_header_daj">
     <b>ポイント履歴</b>
+  </div>
+  <div class="content_body_M">
     <div>
       <% @receipts.each do |r| %>
       <%= "#{r.created_at.strftime("%Y年%m月%d日 %H時%m分")}" %>
