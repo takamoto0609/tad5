@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
     my_area
-    @items = Item.all
+    @items = Item.where(status_id: 2)
     gon.items = @items
   end
 
