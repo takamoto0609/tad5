@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :wallets do
     collection do
       get 'check_receipts'
+      get 'change_gift'
     end
   end
   resources :orders
