@@ -102,6 +102,10 @@ class ItemsController < ApplicationController
     @orders = Order.where(giver: current_user.id).order(id: "DESC")
     redirect_to receive_order_items_path
   end
+  
+  def my_store
+    @items = Item.where(user_id: current_user.id)
+  end
 
   private
 

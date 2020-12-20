@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'crash_order'
       get 'receive_order'
       get 'approval_order'
+      get 'my_store'
     end
     resources :chats
   end
