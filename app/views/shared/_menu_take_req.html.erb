@@ -12,29 +12,15 @@
       <a href="/" class="search_btn btn-shared"><b style="font-size: 18px;">トップページ</b>へ戻る</a>
     </div>
     <div>
-      <a href="/wallets/show" class="search_btn btn-shared"><b style="font-size: 16px;">ポイントメニュー</b></a>
+      <a href="/menus/point" class="search_btn btn-shared"><b style="font-size: 16px;">ポイントメニュー</b></a>
     </div>
   </div>
   <div class="menu_2">
-    <% if @item.user_id == current_user.id %>
-    <div class="search_btn btn-shared_X", style="font-weight: bold;">
-      リクエストを送る
-    </div>
-    <% else %>
     <div>
       <%= link_to 'リクエストを送る', order_items_path(@item), class: "search_btn btn-shared", style:"font-weight: bold;" %>
     </div>
-    <% end %>
     <div>
       <a href="/items/check_order" class="search_btn btn-shared"><b style="font-size: 16px;">送信したリクエスト</b>を確認</a>
-    </div>
-  </div>
-  <div class="menu_2">
-    <div>
-      <a href="/items/new" class="search_btn btn-shared"><b style="font-size: 16px;">サービス</b>を提供</a>
-    </div>
-    <div>
-      <a href="/items/receive_order" class="search_btn btn-shared"><b style="font-size: 16px;">受信したリクエスト</b>を確認</a>
     </div>
   </div>
 </div>

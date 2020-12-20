@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
     my_area
-    @items = Item.all
+    @items = Item.where(status_id: 2)
     gon.items = @items
   end
 
@@ -101,6 +101,14 @@ class ItemsController < ApplicationController
     giver_receipt.save
     @orders = Order.where(giver: current_user.id).order(id: "DESC")
     redirect_to receive_order_items_path
+  end
+  
+  def my_store
+    if user_signed_in?
+      @items = Item.where(user_id: current_user.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   private

@@ -1,0 +1,26 @@
+<div class="menu">
+  <div class="menu_1">
+    <p>現在のポイント</p>
+    <% if user_signed_in? %>
+    <b style="font-size: 24px;"><%= "#{@my_wallet.point}" %>P</b>
+    <% else %>
+    <b style="font-size: 24px;">--- P</b>
+    <% end %>
+  </div>
+  <div class="menu_2">
+    <div>
+      <a href="/" class="search_btn btn-shared"><b style="font-size: 18px;">トップページ</b>へ戻る</a>
+    </div>
+    <div>
+      <a href="/items/new" class="search_btn btn-shared"><b style="font-size: 16px;">サービス</b>を提供</a>
+    </div>
+  </div>
+  <div class="menu_2">
+    <div>
+      <a href="/items/my_store" class="search_btn btn-shared"><b style="font-size: 16px;">提供中の</b>サービス一覧</a>
+    </div>
+    <div>
+      <a href="/items/receive_order" class="search_btn btn-shared"><b style="font-size: 16px;">受信したリクエスト</b>を確認</a>
+    </div>
+  </div>
+</div>

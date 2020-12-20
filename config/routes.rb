@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'crash_order'
       get 'receive_order'
       get 'approval_order'
+      get 'my_store'
     end
     resources :chats
   end
@@ -18,4 +19,12 @@ Rails.application.routes.draw do
     end
   end
   resources :orders
+  resources :menus do
+    collection do
+      get 'give'
+      get 'take'
+      get 'point'
+      get 'how_to_use'
+    end
+  end
 end

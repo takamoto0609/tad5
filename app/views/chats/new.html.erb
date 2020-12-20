@@ -2,7 +2,11 @@
   <%= render "shared/header" %>
   <div class="inner_frame">
     <%= render "new_content" %>
-    <%= render "shared/menu2" %>
+    <% if @item.user_id == current_user.id %>
+    <%= render "shared/menu_give" %>
+    <% else %>
+    <%= render "shared/menu_take_req" %>
+    <% end %>
   </div>
   <%= render "shared/footer" %>
 </div>
