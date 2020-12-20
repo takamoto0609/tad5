@@ -11,9 +11,16 @@
     <div>
       <a href="/" class="search_btn btn-shared"><b style="font-size: 18px;">トップページ</b>へ戻る</a>
     </div>
+    <div>
+      <%= link_to '履歴を見る', check_receipts_wallets_path, class: "search_btn btn-shared", style:"font-size:20px; font-weight: bold;" %>
+    </div>
   </div>
   <div class="menu_2">
-  </div>
-  <div class="menu_2">
+    <div>
+      <%= link_to 'ポイントを貯める', "#", class: "search_btn btn-shared", style:"font-weight: bold;" %>
+    </div>
+    <div>
+      <%= link_to 'ポイントを景品と交換', change_gift_wallets_path, class: "search_btn btn-shared", style:"font-weight: bold;" %>
+    </div>
   </div>
 </div>
