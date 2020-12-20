@@ -19,4 +19,12 @@ Rails.application.routes.draw do
     end
   end
   resources :orders
+  resources :menus do
+    collection do
+      get 'give'
+      get 'take'
+      get 'point'
+      get 'how_to_use'
+    end
+  end
 end

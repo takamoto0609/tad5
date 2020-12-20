@@ -104,7 +104,11 @@ class ItemsController < ApplicationController
   end
   
   def my_store
-    @items = Item.where(user_id: current_user.id)
+    if user_signed_in?
+      @items = Item.where(user_id: current_user.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   private
