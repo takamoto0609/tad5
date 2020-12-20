@@ -1,0 +1,36 @@
+<div class="chat_content">
+  <div class="chat_body">
+    <h2 style="text-align:center"><%="#{@item.user.email}さんへの問い合わせ"%></h2>
+    <div id="chats">
+      <% @chats.each do |chat|%>
+      <%if chat.user_id==current_user.id%>
+      <p style="font-size: 8px; color: rgb(32, 206, 206);"><%=chat.created_at.strftime("%m月%d日 %H時%m分")%></p>
+      <div class="mycomment">
+        <p><%=chat.message%></p>
+      </div>
+      <%else%>
+      <p style="font-size: 8px; color: rgb(32, 206, 206); text-align:left">
+        <%=chat.created_at.strftime("%m月%d日 %H時%m分")%></p>
+      <div class="fukidasi">
+        <div class="faceicon" , style="font-size: 8px; color: rgb(32, 206, 206);">
+          <%= "#{chat.user.email}"%>
+        </div>
+        <div class="chatting">
+          <div class="says">
+            <p><%=chat.message%></p>
+          </div>
+        </div>
+      </div>
+      <%end%>
+      <%end%>
+    </div>
+  </div>
+  <div class="chat_footer">
+    <div class="chat_form">
+      <%= form_with model: @chat, url: item_chats_path, id:"send-form", local: true do |f|%>
+      <%= f.text_field :message, class:"items-text", id:"message", placeholder:"入力してね", style:"width:30%;", maxlength:"40" %>
+      <%= f.submit '送信', id:"send", class:"very_small_btn"%>
+      <%end%>
+    </div>
+  </div>
+</div>

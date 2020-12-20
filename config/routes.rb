@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get 'receive_order'
       get 'approval_order'
     end
+    resources :chats
   end
   resources :wallets do
     collection do
