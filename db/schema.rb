@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(version: 2020_12_21_051648) do
   end
 
   create_table "gifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "gift_id", null: false
+    t.integer "point", null: false
+    t.string "name", null: false
+    t.string "address", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

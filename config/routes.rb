@@ -28,4 +28,5 @@ Rails.application.routes.draw do
       get 'how_to_use'
     end
   end
+  resources :gifts
 end
