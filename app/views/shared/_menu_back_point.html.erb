@@ -1,0 +1,15 @@
+<div class="menu">
+  <div class="menu_1">
+    <p>現在のポイント</p>
+    <% if user_signed_in? %>
+    <b style="font-size: 24px;"><%= "#{@my_wallet.point}" %>P</b>
+    <% else %>
+    <b style="font-size: 24px;">--- P</b>
+    <% end %>
+  </div>
+  <div class="menu_2">
+    <div>
+      <a href="/menus/point" class="search_btn btn-shared"><b style="font-size: 16px;">ポイントメニュー</b></a>
+    </div>
+  </div>
+</div>

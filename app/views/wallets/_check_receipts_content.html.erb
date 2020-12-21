@@ -3,12 +3,19 @@
     <b>ポイント履歴</b>
   </div>
   <div class="content_body_M">
-    <div>
+    <table border="1">
+      <tr>
+        <th style="text-align: center;">日時</th>
+        <th style="text-align: center;">ポイント</th>
+        <th style="text-align: center;">理由</th>
+      </tr>
       <% @receipts.each do |r| %>
-      <%= "#{r.created_at.strftime("%Y年%m月%d日 %H時%m分")}" %>
-      <b><%= "#{r.point}P" %></b>
-      <%= "#{r.reason}" %><br>
+      <tr>
+        <td style="text-align: center;"><%= "#{r.created_at.strftime("%Y年%m月%d日 %H時%m分")}" %></td>
+        <td style="text-align: center;"><%= "#{r.point}P" %></td>
+        <td style="text-align: center;"><%= "#{r.reason}" %></td>
+      </tr>
       <% end %>
-    </div>
+    </table>
   </div>
 </div>

@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_one :area
   has_one :wallet
   has_many :chats
+  has_many :gifts
 end
