@@ -19,7 +19,7 @@ class GiftsController < ApplicationController
         receipt.wallet_id = current_user.wallet.id
         receipt.reason = "景品と交換"
         receipt.save
-        redirect_to :root
+        redirect_to gifts_path
       else
         @gift = Gift.new(gift_params)
         render :new
@@ -34,7 +34,7 @@ class GiftsController < ApplicationController
         receipt.wallet_id = current_user.wallet.id
         receipt.reason = "景品と交換"
         receipt.save
-        redirect_to :root
+        redirect_to gifts_path
       else
         @gift = Gift.new(gift_params)
         render :new
@@ -58,6 +58,15 @@ class GiftsController < ApplicationController
       @gift = Gift.new(gift_params)
       render :new
     end
+  end
+
+  def watching_ads
+    receipt = Receipt.new
+    receipt.point = 100
+    receipt.wallet_id = current_user.wallet.id
+    receipt.reason = "広告視聴のお礼"
+    receipt.save
+    redirect_to point_menus_path
   end
 
   private

@@ -28,5 +28,9 @@ Rails.application.routes.draw do
       get 'how_to_use'
     end
   end
-  resources :gifts
+  resources :gifts do
+    collection do
+      get 'watching_ads'
+    end
+  end
 end
