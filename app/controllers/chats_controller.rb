@@ -1,12 +1,10 @@
 class ChatsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
-    if user_signed_in?
-      @chat = Chat.new
-      @item = Item.find_by(id: params[:item_id])
-      @chats = Chat.where(item_id: params[:item_id])
-    else
-      redirect_to new_user_session_path
-    end
+    @chat = Chat.new
+    @item = Item.find_by(id: params[:item_id])
+    @chats = Chat.where(item_id: params[:item_id])
   end
 
   def create

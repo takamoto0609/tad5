@@ -6,10 +6,6 @@ class MenusController < ApplicationController
   end
 
   def point
-    if user_signed_in?
-    else
-      redirect_to new_user_session_path
-    end
   end
 
   def how_to_use
