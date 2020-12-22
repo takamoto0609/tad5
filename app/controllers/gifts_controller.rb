@@ -1,4 +1,6 @@
 class GiftsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     if user_signed_in?
       @gift = Gift.new
