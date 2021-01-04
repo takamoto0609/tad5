@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_one :wallet
   has_many :chats
   has_many :gifts
+  has_many :items
 end
