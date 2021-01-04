@@ -29,11 +29,15 @@
 ![image](https://user-images.githubusercontent.com/68495404/103568927-ca2a4580-4f09-11eb-9f83-bc0ed501235f.png)
 * 送信したリクエストとその状態を確認できます。未承認のうちはキャンセルが可能です。
 ![image](https://user-images.githubusercontent.com/68495404/103569062-fb0a7a80-4f09-11eb-9234-e7f68d129c6b.png)
-* ポイントメニューからはポイントの増減履歴が確認できます。
-![image](https://user-images.githubusercontent.com/68495404/103569264-576d9a00-4f0a-11eb-8c6c-88c244e52137.png)
 * リクエストを受け取った相手が「承認」するとポイントが移動します。この例では自分から相手にポイントが150P移動しました。
 ![image](https://user-images.githubusercontent.com/68495404/103570731-fbf0db80-4f0c-11eb-9e4a-d2bf5eb6c1b9.png)
 ![image](https://user-images.githubusercontent.com/68495404/103570806-1a56d700-4f0d-11eb-8b24-ef11cdf32cab.png)
+* ポイントメニューからはポイントの増減履歴が確認できます。
+![image](https://user-images.githubusercontent.com/68495404/103569264-576d9a00-4f0a-11eb-8c6c-88c244e52137.png)
+![image](https://user-images.githubusercontent.com/68495404/103583517-2b124780-4f23-11eb-8712-484aa167867d.png)
+* ポイントメニューには他に、広告視聴によるポイント付加機能(模擬的に1クリックで100P付与)とポイントを景品と交換する機能があります。
+![image](https://user-images.githubusercontent.com/68495404/103583590-4f6e2400-4f23-11eb-93b5-07a3b60f5fb9.png)
+
 
 ### 制作背景
 * 制作のきっかけは、PDFをプリントアウトするのにコンビニじゃなくて近所でプリンターを借りれたら便利なのに、と思ったことからでした。ポイントのやり取りで近所で何かをシェアしあえるアプリを考えていたとき、ふとコインランドリーが目に止まり、洗濯機なら1回100円200円で貸す人はいるだろうし、借りる人もコインランドリーより毎回100円200円安く洗濯できるなら利用するだろうと思いました。類似のアプリやサービスもないようなので制作に踏み切りました。
